@@ -1,0 +1,1 @@
+# rabiitmq_practice
