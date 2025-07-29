@@ -1,0 +1,11 @@
+services:
+  rabbitmq:
+    container_name: test-rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - ./messaging/definitions.json:/etc/rabbitmq/definitions.json
+    environment:
+      - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbitmq_management load_definitions "/etc/rabbitmq/definitions.json"
